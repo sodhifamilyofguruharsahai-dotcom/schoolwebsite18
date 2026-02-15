@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalsa Mission Academy</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5f7ff;}
+
+/* NAVBAR */
+/* ================= NAVBAR ================= */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:linear-gradient(45deg,#0d6efd,#0046ad);
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+/* LEFT SIDE (LOGO) */
+.nav-left{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.kll{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo{
+font-size:20px;
+font-weight:600;
+}
+
+/* NAV LINKS DESKTOP */
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+display:flex;
+align-items:center;
+gap:8px;
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ffd700;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+}
+
+.hamburger div{
+width:25px;
+height:3px;
+background:white;
+margin:4px;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+/* navbar padding smaller */
+.navbar{
+padding:15px 20px;
+}
+
+/* show hamburger on right */
+.hamburger{
+display:flex;
+}
+
+/* hide menu initially */
+.nav-links{
+position:absolute;
+top:70px;
+right:0;              /* ⭐ menu on right side */
+background:#0046ad;
+flex-direction:column;
+width:220px;
+padding:20px 15px;
+display:none;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+/* ⭐ align text + icons right */
+align-items:flex-end;
+text-align:right;
+}
+
+/* menu links */
+.nav-links a{
+width:100%;
+justify-content:flex-end;
+padding:12px 10px;
+}
+
+/* show when active */
+.nav-links.active{
+display:flex;
+}
+
+/* logo smaller on phone */
+.logo{
+font-size:16px;
+}
+
+.kll{
+width:40px;
+height:40px;
+}
+
+}
+/* CAROUSEL IMAGE FIX */
+.carousel img{
+height:400px;
+object-fit:cover;
+border-radius:15px;
+}
+
+/* SECTION */
+.section{
+width:85%;
+margin:40px auto;
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+/* PRINCIPAL */
+.principal-section{
+display:flex;
+gap:40px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.principal-text{flex:2;}
+.principal-image img{
+width:320px;
+max-width:100%;
+border-radius:15px;
+}
+
+/* SHINING STARS */
+.star-container{text-align:center;margin:60px auto;width:85%;}
+.star-cards{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.image-box{
+width:280px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+padding:15px;
+}
+
+.image-box img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* GALLERY */
+.gallery-title{
+text-align:center;
+margin-top:60px;
+color:#0d6efd;
+font-weight:600;
+}
+
+.image-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+width:85%;
+margin:40px auto;
+}
+
+.image-container img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+}
+
+/* FACILITIES */
+.facilities-section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.facility-title{text-align:center;color:#0d6efd;margin-bottom:20px;}
+.facility-desc{text-align:center;margin-bottom:50px;}
+
+.facility-row{
+display:flex;
+gap:40px;
+align-items:center;
+margin-bottom:60px;
+flex-wrap:wrap;
+}
+
+.facility-row.reverse{flex-direction:row-reverse;}
+
+.facility-img img{
+width:100%;
+max-width:450px;
+border-radius:12px;
+}
+
+.facility-text{flex:1;}
+
+/* FOOTER */
+.big-footer{
+background:#0f172a;
+color:white;
+padding-top:60px;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+padding:0 20px 40px;
+}
+
+.footer-box{flex:1;min-width:250px;}
+.footer-box h3{margin-bottom:15px;color:#facc15;}
+
+.footer-links a{
+display:block;
+color:#e5e7eb;
+margin-bottom:10px;
+text-decoration:none;
+}
+
+.footer-bottom{
+text-align:center;
+padding:15px;
+background:rgba(0,0,0,0.4);
+}
+
+.kkkol{text-align:justify;}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="nav-left">
+<img class="kll" src="Logo.jpeg">
+<div class="logo">Khalsa Mission Academy Sen. Sec. School</div>
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="#"><i class="fas fa-images"></i> Gallery</a>
+<a href="#"><i class="fas fa-book"></i> History</a>
+<a href="#"><i class="fas fa-envelope"></i> Contact</a>
+</div>
+</nav>
+
+<!-- CAROUSEL -->
+<div class="container mt-4">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img class="d-block w-100" src="khalsa school.jpeg">
+</div>
+</div>
+</div>
+</div>
+
+<!-- PRINCIPAL -->
+<div class="section">
+<div class="principal-section">
+<div class="principal-text">
+<h1>Our School Principal</h1>
+<p class="kkkkol">
+Our respected principal is a visionary leader who guides the school with wisdom, dedication, and strong values.
+A school principal is the head of the school who leads with wisdom and responsibility.
+They maintain discipline and ensure a positive learning environment for students.
+A good principal motivates teachers and students to achieve their best.
+They support academic growth, moral values, and character development.
+Their leadership helps in building a successful and well-managed school.
+</p>
+</div>
+
+<div class="principal-image">
+<img src="school principal3.jpeg">
+</div>
+</div>
+</div>
+
+<!-- SHINING STARS -->
+<div class="star-container">
+<h1>Shining Stars</h1>
+
+<div class="star-cards">
+
+<div class="image-box">
+<img src="simran 2.jpeg">
+<p><b>Ms. Simran Kaur Advocate</b><br>
+Punjab & Haryana High Court, Chandigarh <br>
+District & Session Court, Ferozepur ⚖️</p>
+</div>
+
+<div class="image-box">
+<img src="topper.jpeg">
+<p><b>Ms. Komal Daler — Medical Topper</b><br>
+Sri Guru Granth Sahib World University</p>
+</div>
+
+<div class="image-box">
+<img src="Medical.jpeg">
+<p><b>Ms. Muneet Kaur — Medical Student Topper</b><br>
+Sri Guru Granth Sahib World University</p>
+</div>
+
+</div>
+</div>
+
+<!-- GALLERY (ADDED HEADING HERE AS REQUESTED) -->
+<h1 class="gallery-title">School Gallery</h1>
+
+<div class="image-container">
+<img src="student pic 3.jpeg">
+<img src="student pic 4.jpeg">
+<img src="student pic 5.jpeg">
+<img src="student pic 7.jpeg">
+<img src="student pic 8.jpeg">
+<img src="student pic.jpeg">
+<img src="student pic 9.jpeg">
+<img src="student pic 10.jpeg">
+</div>
+
+<!-- FACILITIES -->
+<section class="facilities-section">
+
+<h2 class="facility-title">Our School Facilities</h2>
+
+<div class="facility-row">
+<div class="facility-img">
+<img src="school bus khalsa.jpg">
+</div>
+<div class="facility-text">
+<h3>School Bus</h3>
+<p>
+Safe and convenient transport for students. A school bus provides safe and reliable transportation for students to and from school every day.
+It follows fixed routes and ensures comfort, discipline, and timely travel for children.
+</p>
+</div>
+</div>
+
+<div class="facility-row reverse">
+<div class="facility-img">
+<img src="computer lab khalsa.jpg">
+</div>
+<div class="facility-text">
+<h3>Computer Lab</h3>
+<p>
+Modern computers for practical learning. The computer lab helps students learn modern technology and develop essential digital skills.
+It provides access to computers, internet, and educational software for practical learning.
+</p>
+</div>
+</div>
+
+<div class="facility-row reverse">
+<div class="facility-img">
+<img src="playground pic khalsa.jpg">
+</div>
+<div class="facility-text">
+<h3>Green Play Ground</h3>
+<p>
+The school playground provides a space for students to play, exercise, and stay physically active.
+It helps in developing teamwork, sportsmanship, and discipline among students.
+The playground also supports students’ physical health and overall development.
+</p>
+</div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="big-footer">
+
+  <div class="footer-container">
+
+    <!-- About School -->
+    <div class="footer-box">
+      <h3>Khalsa Mission Academy</h3>
+      <p>
+        Khalsa Mission Academy Senior Secondary School is dedicated to providing quality education,
+        strong moral values, and overall development of students. The school focuses on academic
+        excellence, discipline, and character building to create responsible citizens.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box footer-links">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">History</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+
+      <p><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
+      <p><i class="fas fa-phone"></i> +91 9814023600</p>
+      <p><i class="fas fa-envelope"></i> khalsamissionacademy@gmail.com</p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Khalsa Mission Academy Senior Secondary School — All Rights Reserved
+  </div>
+
+</footer>
+
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
